@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDMA.UI", "PDMA.UI\PDMA.UI.csproj", "{C5774317-7C21-40E5-9181-4E7AACB891EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5774317-7C21-40E5-9181-4E7AACB891EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5774317-7C21-40E5-9181-4E7AACB891EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5774317-7C21-40E5-9181-4E7AACB891EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5774317-7C21-40E5-9181-4E7AACB891EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {337CA510-5AD4-4F7A-8FD4-D441416DD5D1}
+	EndGlobalSection
+EndGlobal
