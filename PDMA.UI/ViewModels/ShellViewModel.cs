@@ -3,6 +3,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows;
 
+using ControlzEx.Theming;
+
 using Prism.Commands;
 using Prism.Mvvm;
 
@@ -10,7 +12,6 @@ namespace PDMA.UI.ViewModels
 {
     public class ShellViewModel : BindableBase
     {
-
         private string _title = "Prism DryIoC / MahApps Demo";
         public string Title
         {
@@ -19,8 +20,13 @@ namespace PDMA.UI.ViewModels
         }
 
         public DelegateCommand<string> LaunchGitHubSiteCommand { get; }
+        public DelegateCommand ChangeThemeCommand { get; }
 
-        public ShellViewModel() => LaunchGitHubSiteCommand = new(LaunchGitHubSite);
+        public ShellViewModel()
+        {
+            LaunchGitHubSiteCommand = new(LaunchGitHubSite);
+            ChangeThemeCommand = new(ChangeTheme);
+        }
 
         private void LaunchGitHubSite(string browser)
         {
@@ -45,5 +51,7 @@ namespace PDMA.UI.ViewModels
                 MessageBox.Show(other.Message);
             }
         }
+
+        private void ChangeTheme() => ThemeManager.Current.ChangeTheme(Application.Current, "Dark.Green");
     }
 }

@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDMA.UI", "PDMA.UI\PDMA.UI.csproj", "{C5774317-7C21-40E5-9181-4E7AACB891EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDMA.UI", "PDMA.UI\PDMA.UI.csproj", "{C5774317-7C21-40E5-9181-4E7AACB891EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDMA.Core", "PDMA.Core\PDMA.Core.csproj", "{E86AEB17-AE2D-4043-B358-643A216C54D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeSelect.Module", "ThemeSelect.Module\ThemeSelect.Module.csproj", "{535E9805-C3B2-492D-962B-30C9D276F474}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{C5774317-7C21-40E5-9181-4E7AACB891EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5774317-7C21-40E5-9181-4E7AACB891EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5774317-7C21-40E5-9181-4E7AACB891EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E86AEB17-AE2D-4043-B358-643A216C54D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E86AEB17-AE2D-4043-B358-643A216C54D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E86AEB17-AE2D-4043-B358-643A216C54D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E86AEB17-AE2D-4043-B358-643A216C54D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{535E9805-C3B2-492D-962B-30C9D276F474}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{535E9805-C3B2-492D-962B-30C9D276F474}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{535E9805-C3B2-492D-962B-30C9D276F474}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{535E9805-C3B2-492D-962B-30C9D276F474}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -29,7 +29,14 @@
             </Button>
         </mah:WindowCommands>
     </mah:MetroWindow.RightWindowCommands>
+    
     <Grid>
-        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <ContentControl Grid.Row="0" prism:RegionManager.RegionName="ContentRegion" />
+        <Button Grid.Row="1" Command="{Binding ChangeThemeCommand}" Height="22" Width="100" Content="Change Theme" />
     </Grid>
 </mah:MetroWindow>
