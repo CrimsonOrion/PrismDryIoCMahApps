@@ -2,6 +2,8 @@
 
 using ControlzEx.Theming;
 
+using MahApps.Metro.Controls.Dialogs;
+
 using PDMA.UI.Views;
 
 using Prism.Ioc;
@@ -28,7 +30,10 @@ namespace PDMA.UI
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            DialogCoordinator dc = new();
+            containerRegistry
+                .RegisterInstance<IDialogCoordinator>(dc)
+                ;
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog) => moduleCatalog
