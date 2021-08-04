@@ -24,17 +24,13 @@ namespace PDMA.UI
         {
             base.OnStartup(e);
 
-            ThemeManager.Current.ThemeSyncMode = ThemeSyncMode.SyncAll;
-            ThemeManager.Current.ChangeTheme(this, "Light.Purple");
+            //ThemeManager.Current.ThemeSyncMode = ThemeSyncMode.SyncAll;
+            //ThemeManager.Current.ChangeTheme(this, "Light.Purple");
         }
 
-        protected override void RegisterTypes(IContainerRegistry containerRegistry)
-        {
-            DialogCoordinator dc = new();
-            containerRegistry
-                .RegisterInstance<IDialogCoordinator>(dc)
+        protected override void RegisterTypes(IContainerRegistry containerRegistry) => containerRegistry
+                .RegisterInstance<IDialogCoordinator>(new DialogCoordinator())
                 ;
-        }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog) => moduleCatalog
                 .AddModule<ThemeSelectModule>()

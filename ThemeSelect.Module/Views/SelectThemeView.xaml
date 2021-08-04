@@ -13,9 +13,9 @@
         <ComboBox
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            ItemsSource="{Binding Themes}"
-            SelectedItem="{Binding SelectedTheme}" 
             DisplayMemberPath="DisplayName"
-            SelectedValuePath="Name"/>
+            ItemsSource="{Binding Themes}"
+            SelectedItem="{Binding SelectedTheme}"
+            SelectedValuePath="Name" />
     </Grid>
 </UserControl>

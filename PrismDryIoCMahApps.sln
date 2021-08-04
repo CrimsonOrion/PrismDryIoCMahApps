@@ -5,9 +5,13 @@ VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDMA.UI", "PDMA.UI\PDMA.UI.csproj", "{C5774317-7C21-40E5-9181-4E7AACB891EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDMA.Core", "PDMA.Core\PDMA.Core.csproj", "{E86AEB17-AE2D-4043-B358-643A216C54D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDMA.Core", "PDMA.Core\PDMA.Core.csproj", "{E86AEB17-AE2D-4043-B358-643A216C54D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeSelect.Module", "ThemeSelect.Module\ThemeSelect.Module.csproj", "{535E9805-C3B2-492D-962B-30C9D276F474}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThemeSelect.Module", "ThemeSelect.Module\ThemeSelect.Module.csproj", "{535E9805-C3B2-492D-962B-30C9D276F474}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{B1DB3B99-F164-4F29-90CC-07124CCA8186}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{665F299B-A7E2-4FC2-9A64-F307E1B34B53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +34,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E86AEB17-AE2D-4043-B358-643A216C54D9} = {665F299B-A7E2-4FC2-9A64-F307E1B34B53}
+		{535E9805-C3B2-492D-962B-30C9D276F474} = {B1DB3B99-F164-4F29-90CC-07124CCA8186}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {337CA510-5AD4-4F7A-8FD4-D441416DD5D1}

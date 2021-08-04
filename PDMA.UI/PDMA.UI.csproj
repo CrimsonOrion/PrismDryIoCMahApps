@@ -4,7 +4,13 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ApplicationIcon>mahapps.metro.logo2.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="mahapps.metro.logo2.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MahApps.Metro" Version="2.4.7" />
@@ -15,6 +21,12 @@
   <ItemGroup>
     <ProjectReference Include="..\PDMA.Core\PDMA.Core.csproj" />
     <ProjectReference Include="..\ThemeSelect.Module\ThemeSelect.Module.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="mahapps.metro.logo2.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
