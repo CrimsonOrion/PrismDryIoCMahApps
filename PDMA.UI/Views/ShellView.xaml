@@ -7,8 +7,8 @@
     xmlns:prism="http://prismlibrary.com/"
     xmlns:theming="urn:controlzex"
     Title="{Binding Title}"
-    Width="355"
-    Height="350"
+    Width="500"
+    Height="500"
     Dialog:DialogParticipation.Register="{Binding}"
     prism:ViewModelLocator.AutoWireViewModel="True"
     Icon="..\mahapps.metro.logo2.ico"
@@ -75,6 +75,7 @@
             </Button>
         </mah:WindowCommands>
     </mah:MetroWindow.LeftWindowCommands>
+
     <mah:MetroWindow.RightWindowCommands>
         <mah:WindowCommands>
             <Button
@@ -100,6 +101,18 @@
             </Button>
         </mah:WindowCommands>
     </mah:MetroWindow.RightWindowCommands>
+
+    <mah:MetroWindow.Flyouts>
+        <mah:FlyoutsControl>
+            <mah:Flyout
+                Width="400"
+                Header="Settings"
+                IsOpen="{Binding IsSettingsFlyoutOpen}"
+                Position="Right">
+                <TextBlock Text="Settings here" />
+            </mah:Flyout>
+        </mah:FlyoutsControl>
+    </mah:MetroWindow.Flyouts>
 
     <Grid>
         <Grid.RowDefinitions>
@@ -135,6 +148,9 @@
                     Command="{Binding DataContext.SyncThemeNowCommand, RelativeSource={RelativeSource AncestorType=Window}}"
                     Header="Sync now" />
             </MenuItem>
+            <MenuItem
+                Command="{Binding OpenSettingsFlyoutCommand}"
+                Header="Settings" />
         </Menu>
 
         <ContentControl

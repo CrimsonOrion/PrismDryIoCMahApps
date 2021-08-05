@@ -33,6 +33,15 @@ namespace PDMA.UI.ViewModels
         public DelegateCommand SyncThemeNowCommand => new(SyncThemeNow);
         public DelegateCommand<ThemeSyncMode?> ChangeSyncModeCommand => new(ChangeSyncMode, _ => _ is not null);
 
+        public DelegateCommand OpenSettingsFlyoutCommand => new(OpenSettingsFlyout);
+
+        private bool _isSettingsFlyoutOpen;
+        public bool IsSettingsFlyoutOpen
+        {
+            get => _isSettingsFlyoutOpen;
+            set => SetProperty(ref _isSettingsFlyoutOpen, value);
+        }
+
         public ObservableCollection<ThemeResource> ThemeResources { get; }
         public List<AccentColorMenuData> AccentColors { get; set; }
 
@@ -77,6 +86,8 @@ namespace PDMA.UI.ViewModels
             view.SortDescriptions.Add(new System.ComponentModel.SortDescription(nameof(ThemeResource.Key), System.ComponentModel.ListSortDirection.Ascending));
             UpdateThemeResources();
         }
+
+        private void OpenSettingsFlyout() => IsSettingsFlyoutOpen = !IsSettingsFlyoutOpen;
 
         private async void LaunchGitHubSite(string browser)
         {

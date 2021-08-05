@@ -1,5 +1,4 @@
-﻿using System.Collections.ObjectModel;
-
+﻿
 using ControlzEx.Theming;
 
 using Prism.Mvvm;
@@ -8,24 +7,20 @@ namespace ThemeSelect.Module.ViewModels
 {
     public class SelectThemeViewModel : BindableBase
     {
-        private ObservableCollection<Theme> _themes = new();
-        public ObservableCollection<Theme> Themes
+        private string _currentTheme;
+        public string CurrentTheme
         {
-            get => _themes;
-            set => SetProperty(ref _themes, value);
+            get => _currentTheme;
+            set => SetProperty(ref _currentTheme, value);
         }
 
-        private Theme _selectedTheme;
-        public Theme SelectedTheme
+        public SelectThemeViewModel() => ThemeManager.Current.ThemeChanged += Current_ThemeChanged;
+
+        ~SelectThemeViewModel()
         {
-            get => _selectedTheme;
-            set
-            {
-                SetProperty(ref _selectedTheme, value);
-                ThemeManager.Current.ChangeTheme(System.Windows.Application.Current, SelectedTheme);
-            }
+            ThemeManager.Current.ThemeChanged -= Current_ThemeChanged;
         }
 
-        public SelectThemeViewModel() => Themes = new(ThemeManager.Current.Themes);
+        private void Current_ThemeChanged(object sender, ThemeChangedEventArgs e) => CurrentTheme = ThemeManager.Current.DetectTheme(System.Windows.Application.Current).DisplayName;
     }
 }

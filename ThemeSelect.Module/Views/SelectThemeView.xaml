@@ -10,12 +10,10 @@
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
     <Grid>
-        <ComboBox
+        <TextBlock
+            Margin="10"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            DisplayMemberPath="DisplayName"
-            ItemsSource="{Binding Themes}"
-            SelectedItem="{Binding SelectedTheme}"
-            SelectedValuePath="Name" />
+            FontSize="28"
+            Text="{Binding CurrentTheme}" />
     </Grid>
 </UserControl>
