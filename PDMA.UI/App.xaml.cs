@@ -24,8 +24,10 @@ namespace PDMA.UI
         {
             base.OnStartup(e);
 
+            // Overrides App.xaml, but can be overriden by the ViewModel
             //ThemeManager.Current.ThemeSyncMode = ThemeSyncMode.SyncAll;
-            //ThemeManager.Current.ChangeTheme(this, "Light.Purple");
+            ThemeManager.Current.ChangeTheme(this, "Light.Purple");
+            ThemeManager.Current.SyncTheme();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry) => containerRegistry

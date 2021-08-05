@@ -31,7 +31,7 @@ namespace PDMA.UI.ViewModels
 
         public DelegateCommand<string> LaunchGitHubSiteCommand => new(LaunchGitHubSite);
         public DelegateCommand SyncThemeNowCommand => new(SyncThemeNow);
-        public DelegateCommand<ThemeSyncMode?> ChangeSyncModeCommand => new(ChangeSyncMode);
+        public DelegateCommand<ThemeSyncMode?> ChangeSyncModeCommand => new(ChangeSyncMode, _ => _ is not null);
 
         public ObservableCollection<ThemeResource> ThemeResources { get; }
         public List<AccentColorMenuData> AccentColors { get; set; }
@@ -51,6 +51,8 @@ namespace PDMA.UI.ViewModels
         public ShellViewModel(IDialogCoordinator dialogCoordinator)
         {
             _dialogCoordinator = dialogCoordinator;
+
+            // This will override both App.xaml and App.xaml.cs base themes!
             ThemeManager.Current.ThemeSyncMode = ThemeSyncMode.SyncAll;
             ThemeManager.Current.SyncTheme();
 
@@ -110,16 +112,13 @@ namespace PDMA.UI.ViewModels
             await controller.CloseAsync();
         }
 
-        void ChangeSyncMode(ThemeSyncMode? themeSyncMode)
+        private void ChangeSyncMode(ThemeSyncMode? themeSyncMode)
         {
             ThemeManager.Current.ThemeSyncMode = themeSyncMode!.Value;
             ThemeManager.Current.SyncTheme();
         }
 
-        void SyncThemeNow()
-        {
-            ThemeManager.Current.SyncTheme();
-        }
+        private void SyncThemeNow() => ThemeManager.Current.SyncTheme();
 
         public void UpdateThemeResources()
         {
